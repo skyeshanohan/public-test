@@ -1,0 +1,21 @@
+apiVersion: v3
+kind: system
+metadata:
+  name: product-recommendation
+  description: Surfaces personalized product suggestions in Shopist
+  displayName: "Product Recommendation"
+  tags:
+  - product:recommendations
+  - business-line:shared-components
+  owner: shopist
+  additionalOwners:
+    - name: Shopist Support Team
+      type: Operator
+spec:
+  lifecycle: production
+  tier: "0"
+  components:
+  - service: product-recommendation
+  - service: orders-app
+  - api: products
+  - system: shopist-user-trends
